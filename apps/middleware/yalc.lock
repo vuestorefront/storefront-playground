@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@fakestore/api-client": {
+      "version": "0.0.4",
+      "signature": "8c00ce8cc9ba83bcbabd6c40e8614913",
+      "file": true
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import { redirect } from "next/navigation";
-import ProductDetails from "../components/ui/ProductDetails";
-import { getSdk } from "../sdk/sdk.config"
-import GalleryWithBullets from "../components/ui/Gallery";
+import ProductDetails from "../../components/ui/ProductDetails";
+import { getSdk } from "../../sdk/sdk.config"
+import GalleryWithBullets from "../../components/ui/Gallery";
 
-export default async function Page() {
-  const sdk = getSdk();
+export default async function Page({ params }: { params: { code: string } }) {
+  const { code } = params;
 
-  const { data: product } = await sdk.fakestore.getProduct({ code: '1' });
+  const { data: product } = await getSdk().fakestore.getProduct({ code });
 
   if (product === null) {
     redirect('/not-found');

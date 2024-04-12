@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/api/getProduct/index.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,6BAA6B,EAAE,OAAO,EAAE,MAAM,aAAa,CAAC;AAErE;;;;;;;;;;;;;;;;;;;;;;GAsBG;AAEH,UAAU,iBAAiB;IACzB,IAAI,EAAE,MAAM,CAAC;CACd;AAED,eAAO,MAAM,UAAU,YACZ,6BAA6B,UAC9B,iBAAiB,KACxB,QAAQ;IAAE,IAAI,EAAE,OAAO,CAAA;CAAE,CAU3B,CAAC"}

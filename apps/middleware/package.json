@@ -1,0 +1,19 @@
+{
+  "name": "middleware",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "dependencies": {
+    "@fakestore/api-client": "file:.yalc/@fakestore/api-client",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@vue-storefront/middleware": "^3.8.1",
+    "consola": "^3.2.3",
+    "ts-node-dev": "^2.0.0"
+  }
+}
