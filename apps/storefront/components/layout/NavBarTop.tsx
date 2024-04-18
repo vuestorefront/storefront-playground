@@ -11,6 +11,8 @@ import {
 } from '@storefront-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import classNames from 'classnames';
+import { Logo } from '../ui/Logo';
 
 export default function NavBarTop() {
   const [inputValue, setInputValue] = useState('');
@@ -46,13 +48,7 @@ export default function NavBarTop() {
           aria-label="SF Homepage"
           className="inline-block mr-4 focus-visible:outline focus-visible:outline-offset focus-visible:rounded-sm shrink-0"
         >
-          <Image
-            src="https://storage.googleapis.com/sfui_docs_artifacts_bucket_public/production/vsf_logo_white.svg"
-            alt="Sf Logo"
-            width={175}
-            height={50}
-            className="w-[175px] md:h-6 md:w-[176px] lg:w-[12.5rem] lg:h-[1.75rem]"
-          />
+          <Image src="/logo.svg" alt="Vue Storefront Logo" width={175} height={50} className="w-[175px] md:h-6 md:w-[176px] lg:w-[12.5rem] lg:h-[1.75rem]" />
         </Link>
         <SfButton variant="tertiary" square className="md:hidden text-white" aria-label="Search">
           <SfIconSearch />

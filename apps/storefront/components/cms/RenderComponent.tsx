@@ -1,0 +1,44 @@
+"use client";
+
+import { Suspense, useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import type { AgnosticCmsComponent } from './types';
+
+const Hero = dynamic(() => import('./Hero'));
+const Banner = dynamic(() => import('./Banner'));
+
+type RenderComponentProps = {
+  item: AgnosticCmsComponent;
+  hidden?: boolean;
+};
+
+const components = {
+  Hero,
+  Banner,
+};
+
+function RenderComponent({ item, hidden = false }: RenderComponentProps) {
+  const Component = components[item.component as keyof typeof components];
+  const { id, styles, component, uniqueClass, ...componentProps } = item;
+
+  if (!Component) {
+    console.warn(`Component "${item.component}" not found`);
+    return null;
+  }
+
+  return (
+    <>
+      {item.styles && (
+        <Head>
+          <style>{item.styles}</style>
+        </Head>
+      )}
+      <Suspense>
+        <Component {...(componentProps as any)} key={item.id} className={item.uniqueClass} />
+      </Suspense>
+    </>
+  );
+}
+
+export default RenderComponent;

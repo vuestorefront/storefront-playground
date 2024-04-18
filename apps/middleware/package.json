@@ -9,7 +9,6 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
-    "@fakestore/api-client": "file:.yalc/@fakestore/api-client",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@vue-storefront/middleware": "^3.8.1",

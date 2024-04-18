@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-starter",
+  "name": "storefront-playground",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -11,6 +11,7 @@
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "prettier": "^3.1.1",
+    "rollup": "^4.14.3",
     "turbo": "latest"
   },
   "engines": {
@@ -21,5 +22,8 @@
     "apps/*",
     "packages/*"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "@vue-storefront/integrations-tsconfig": "^0.0.4",
+    "@vue-storefront/rollup-config": "^0.0.7"
+  }
 }

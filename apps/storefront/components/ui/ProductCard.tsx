@@ -6,7 +6,7 @@ export default function ProductCardVertical({ product }: { product: Product }) {
   return (
     <div className="border border-neutral-200 rounded-md hover:shadow-lg max-w-[300px]">
       <div className="relative">
-        <SfLink href="#" className="block">
+        <SfLink href={`/product/${product.id}`} className="block">
           <Image
             src={product.image}
             alt="Great product"

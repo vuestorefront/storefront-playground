@@ -1,0 +1,33 @@
+{
+  "name": "@vue-storefront/storyblok-api",
+  "version": "0.0.1",
+  "sideEffects": false,
+  "server": "server/index.js",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "types": "lib/index.d.ts",
+  "license": "VSFEL",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "rimraf lib server && rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "dependencies": {
+    "@vue-storefront/middleware": "^3.9.0",
+    "axios": "^0.21.1",
+    "consola": "^3.0.0",
+    "nanoid": "^5.0.7",
+    "storyblok-js-client": "^6.7.2",
+    "uuid": "^9.0.1"
+  },
+  "files": [
+    "lib/**/*",
+    "server/**/*"
+  ],
+  "yalcSig": "3cec816c06d57a53b80ddb43c17eb35c"
+}

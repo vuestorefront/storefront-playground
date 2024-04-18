@@ -1,28 +1,19 @@
-import { redirect } from "next/navigation";
-import ProductDetails from "../components/ui/ProductDetails";
-import { getSdk } from "../sdk/sdk.config"
-import GalleryWithBullets from "../components/ui/Gallery";
+import RenderComponent from "../components/cms/RenderComponent";
+import { AgnosticCmsComponent } from "../components/cms/types";
+import { getSdk } from "../sdk/sdk.config";
 
 export default async function Page() {
-  const sdk = getSdk();
+  const content = await getSdk().storyblok.getContent({
+    url: 'home',
+  });
 
-  const { data: product } = await sdk.fakestore.getProduct({ code: '1' });
-
-  if (product === null) {
-    redirect('/not-found');
+  function renderComponents(components: AgnosticCmsComponent[] = [], hidden = false) {
+    return components.map((component) => <RenderComponent key={component._uid} item={component} hidden={hidden} />);
   }
 
-  const images = [{
-    imageSrc: product.image,
-    alt: product.title,
-  }]
-
   return (
-    <section className="p-12">
-      <section className="flex gap-12">
-        <GalleryWithBullets images={images} />
-        <ProductDetails product={product} />
-      </section>
-    </section>
+    <main className="px-12">
+      {renderComponents(content.body, true)}
+    </main>
   );
 }

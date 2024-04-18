@@ -5,6 +5,10 @@
       "version": "0.0.4",
       "signature": "8c00ce8cc9ba83bcbabd6c40e8614913",
       "file": true
+    },
+    "@vue-storefront/storyblok-api": {
+      "signature": "3cec816c06d57a53b80ddb43c17eb35c",
+      "file": true
     }
   }
 }
