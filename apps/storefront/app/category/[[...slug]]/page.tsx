@@ -1,6 +1,6 @@
-import CategorySidebar from "../../../components/ui/CategorySidebar"
-import ProductCardVertical from "../../../components/ui/ProductCard";
-import { getSdk } from "../../../sdk/sdk.config"
+import CategorySidebar from "@/components/ui/CategorySidebar"
+import ProductCardVertical from "@/components/ui/ProductCard";
+import { getSdk } from "@/sdk/sdk.config"
 
 export default async function Category({ params }: { params: { slug: string }, searchParams: URLSearchParams }) {
   const sdk = getSdk();
