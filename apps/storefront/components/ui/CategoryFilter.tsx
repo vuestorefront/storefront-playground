@@ -29,7 +29,7 @@ export default function CategoryFilter({ categories, slug }: { categories: strin
       }
     >
       <ul className="mt-2 mb-6">
-        {categories.map((category, index) => (
+        {categories.map((category) => (
           <li key={category}>
             <SfListItem
               size="sm"

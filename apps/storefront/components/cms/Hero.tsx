@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import { SfButton } from '@storefront-ui/react';
 import type { AgnosticCmsImage, AgnosticCmsButton } from './types';
 import classNames from 'classnames';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type HeroProps = {
   title: string;
@@ -40,7 +40,7 @@ export default function Hero({
       <div className="md:flex md:flex-row-reverse md:justify-center min-h-[600px] max-w-[1536px] mx-auto">
         {image && image[0] && (
           <div className="flex flex-col md:basis-2/4 md:items-stretch md:overflow-hidden ">
-            <img
+            <Image
               src={image[0].desktop ?? ''}
               alt={image[0].alt ?? ''}
               className="h-full w-full object-cover object-left"

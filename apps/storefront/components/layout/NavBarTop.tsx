@@ -11,8 +11,6 @@ import {
 } from '@storefront-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import classNames from 'classnames';
-import { Logo } from '../ui/Logo';
 
 export default function NavBarTop() {
   const [inputValue, setInputValue] = useState('');

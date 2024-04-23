@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import type { AgnosticCmsComponent } from './types';
@@ -18,9 +18,9 @@ const components = {
   Banner,
 };
 
-function RenderComponent({ item, hidden = false }: RenderComponentProps) {
+function RenderComponent({ item }: RenderComponentProps) {
   const Component = components[item.component as keyof typeof components];
-  const { id, styles, component, uniqueClass, ...componentProps } = item;
+  const { ...componentProps } = item;
 
   if (!Component) {
     console.warn(`Component "${item.component}" not found`);

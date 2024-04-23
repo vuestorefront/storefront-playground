@@ -8,7 +8,6 @@ import {
   SfIconShoppingCart,
   SfIconCompareArrows,
   SfIconFavorite,
-  SfIconSell,
   SfIconPackage,
   SfIconRemove,
   SfIconAdd,

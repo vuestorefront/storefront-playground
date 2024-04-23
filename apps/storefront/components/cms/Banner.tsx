@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { AgnosticCmsButton, AgnosticCmsImage } from './types';
+import Image from 'next/image';
 
 type BannerProps = {
   title: string;
@@ -32,7 +32,7 @@ export default function Banner({
       style={{ backgroundColor }}
       data-testid="banners"
     >
-      <img
+      <Image
         src={image.length && image[0] ? image[0].desktop! : ''}
         alt={title}
         className="w-full object-contain aspect-square flex-grow flex-shrink basis-1/2 md:max-w-3xl"
