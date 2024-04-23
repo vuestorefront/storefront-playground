@@ -1,11 +1,13 @@
 import consola from "consola";
-import { BoilerplateIntegrationContext, TODO } from "../../types";
+import type { BoilerplateIntegrationContext } from "../../types";
 
 export const getCategories = async (
-  context: BoilerplateIntegrationContext,
+  _context: BoilerplateIntegrationContext
 ): Promise<{ data: string[] }> => {
   try {
-    const categories = await fetch("https://fakestoreapi.com/products/categories");
+    const categories = await fetch(
+      "https://fakestoreapi.com/products/categories"
+    );
     const data = await categories.json();
 
     return { data };

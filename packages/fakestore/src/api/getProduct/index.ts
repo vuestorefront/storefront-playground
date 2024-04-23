@@ -1,5 +1,9 @@
 import consola from "consola";
-import { BoilerplateIntegrationContext, Product } from "../../types";
+import type { BoilerplateIntegrationContext, Product } from "../../types";
+
+interface GetProductsParams {
+  code: string;
+}
 
 /**
  * Get details of a product from Fakestore API.
@@ -7,7 +11,7 @@ import { BoilerplateIntegrationContext, Product } from "../../types";
  * @remarks
  * Check out the Fakestore API documentation for more information.
  * {@link https://fakestoreapi.com/docs}
- * 
+ *
  * @param params
  * Parameter object which can be used with this method.
  * Refer to its type definition to learn about possible properties.
@@ -24,17 +28,14 @@ import { BoilerplateIntegrationContext, Product } from "../../types";
  * const product = await sdk.fakestore.getProduct({ code: '1' });
  * ```
  */
-
-interface GetProductsParams {
-  code: string;
-}
-
 export const getProduct = async (
   context: BoilerplateIntegrationContext,
-  params: GetProductsParams,
+  params: GetProductsParams
 ): Promise<{ data: Product }> => {
   try {
-    const product = await fetch(`https://fakestoreapi.com/products/${params?.code}`);
+    const product = await fetch(
+      `https://fakestoreapi.com/products/${params?.code}`
+    );
     const data = await product.json();
 
     return { data };

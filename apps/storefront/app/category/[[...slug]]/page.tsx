@@ -1,10 +1,11 @@
-import CategorySidebar from "../../../components/ui/CategorySidebar"
-import ProductCardVertical from "../../../components/ui/ProductCard";
-import { getSdk } from "../../../sdk/sdk.config"
+import CategorySidebar from "@/components/ui/CategorySidebar"
+import ProductCardVertical from "@/components/ui/ProductCard";
+import { getSdk } from "@/sdk/sdk.config"
 
 export default async function Category({ params }: { params: { slug: string }, searchParams: URLSearchParams }) {
-  const { data: categories } = await getSdk().fakestore.getCategories();
-  const { data: products } = await getSdk().fakestore.getProducts({
+  const sdk = getSdk();
+  const { data: categories } = await sdk.fakestore.getCategories();
+  const { data: products } = await sdk.fakestore.getProducts({
     category: params.slug && params.slug[0] || '', options: {
       limit: 20
     }

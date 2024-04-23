@@ -1,27 +1,22 @@
-import { createServer } from '@vue-storefront/middleware';
-import { integrations } from '../middleware.config';
-const consola = require('consola');
-const cors = require('cors');
+import { createServer } from "@vue-storefront/middleware";
+import { integrations } from "../middleware.config";
 
-(async () => {
-  const app = await createServer({ integrations });
-  // By default it's running on the localhost.
-  const host = process.argv[2] ?? 'localhost';
-  // By default it's running on the port 8181.
-  const port = process.argv[3] ?? 8181;
-  const CORS_MIDDLEWARE_NAME = 'corsMiddleware';
+const port = 8181;
 
-  const corsMiddleware = app._router.stack.find(
-    (middleware: { name: string }) => middleware.name === CORS_MIDDLEWARE_NAME
+runApp();
+
+async function runApp() {
+  const app = await createServer(
+    { integrations },
+    {
+      cors: {
+        origin: true,
+        credentials: true,
+      },
+    }
   );
 
-  // You can overwrite the cors settings by defining allowed origins.
-  corsMiddleware.handle = cors({
-    origin: ['http://localhost:3000'],
-    credentials: true
+  app.listen(port, "", () => {
+    console.log(`API server listening on port ${port}`);
   });
-
-  app.listen(port, host, () => {
-    consola.success(`API server listening on http://${host}:${port}`);
-  });
-})();
+}

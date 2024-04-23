@@ -1,5 +1,5 @@
 import consola from "consola";
-import { BoilerplateIntegrationContext, Product, TODO } from "../../types";
+import type { BoilerplateIntegrationContext, Product } from "../../types";
 
 /**
  * Get details of multiple products from Fakestore API.
@@ -7,7 +7,7 @@ import { BoilerplateIntegrationContext, Product, TODO } from "../../types";
  * @remarks
  * Check out the Fakestore API documentation for more information.
  * {@link https://fakestoreapi.com/docs}
- * 
+ *
  * @param params
  * Parameter object which can be used with this method.
  * Refer to its type definition to learn about possible properties.
@@ -43,16 +43,18 @@ interface GetProductsParams {
   options?: {
     limit?: number;
     sort?: string;
-  }
+  };
 }
 
 export const getProducts = async (
   context: BoilerplateIntegrationContext,
-  params?: GetProductsParams,
+  params?: GetProductsParams
 ): Promise<{ data: Product[] }> => {
   const { limit = 10, sort = "asc" } = params.options || {};
 
-  const url = params.category ? `https://fakestoreapi.com/products/category/${params.category}?limit=${limit}&sort=${sort}` : `https://fakestoreapi.com/products?limit=${limit}&sort=${sort}`;
+  const url = params.category
+    ? `https://fakestoreapi.com/products/category/${params.category}?limit=${limit}&sort=${sort}`
+    : `https://fakestoreapi.com/products?limit=${limit}&sort=${sort}`;
 
   try {
     const products = await fetch(url);
