@@ -1,5 +1,5 @@
 import RenderComponent from "@/components/cms/RenderComponent";
-import { AgnosticCmsComponent } from "@/components/cms/types";
+import type { AgnosticCmsComponent } from "@/components/cms/types";
 import { getSdk } from "@/sdk/sdk.config";
 
 export default async function Page() {

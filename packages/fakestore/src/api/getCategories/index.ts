@@ -1,5 +1,5 @@
 import consola from "consola";
-import { BoilerplateIntegrationContext } from "../../types";
+import type { BoilerplateIntegrationContext } from "../../types";
 
 export const getCategories = async (
   _context: BoilerplateIntegrationContext

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { apiClientFactory } from "@vue-storefront/middleware";
-import { MiddlewareConfig } from "./index";
+import type { MiddlewareConfig } from "./index";
 import * as apiEndpoints from "./api";
 
 /**

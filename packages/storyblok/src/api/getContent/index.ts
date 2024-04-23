@@ -1,8 +1,8 @@
 import consola from "consola";
-import { ISbStory } from "storyblok-js-client";
+import type { ISbStory } from "storyblok-js-client";
 import { v4 as uuid } from "uuid";
 import { errorMessage } from "../../helpers/constants";
-import { ContentSearchParams } from "../../types";
+import type { ContentSearchParams } from "../../types";
 
 export const getContent = async (
   { client },

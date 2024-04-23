@@ -1,5 +1,6 @@
-import { CreateSdkOptions, createSdk } from "@vue-storefront/next";
-import {
+import type { CreateSdkOptions} from "@vue-storefront/next";
+import { createSdk } from "@vue-storefront/next";
+import type {
   FakeStoreEndpoints,
   RelatedProductsEndpoints,
   StoryblokEndpoints,

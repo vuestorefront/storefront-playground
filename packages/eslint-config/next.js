@@ -1,6 +1,6 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["next"],
+  extends: ["plugin:@typescript-eslint/recommended", "next"],
   root: true,
   ignorePatterns: [
     "node_modules",
@@ -11,4 +11,7 @@ module.exports = {
     "dist",
     "public",
   ],
+  rules: {
+    "@typescript-eslint/consistent-type-imports": "error",
+  },
 };

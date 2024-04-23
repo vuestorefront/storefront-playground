@@ -1,5 +1,5 @@
 import consola from "consola";
-import { BoilerplateIntegrationContext, Product } from "../../types";
+import type { BoilerplateIntegrationContext, Product } from "../../types";
 
 /**
  * Get details of multiple products from Fakestore API.

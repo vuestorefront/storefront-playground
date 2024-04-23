@@ -35,7 +35,8 @@ function RenderComponent({ item }: RenderComponentProps) {
         </Head>
       )}
       <Suspense>
-        <Component {...(componentProps as any)} key={item.id} className={item.uniqueClass} />
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+        <Component {...(componentProps as any)} key={item._uid} className={item.uniqueClass} />
       </Suspense>
     </>
   );
