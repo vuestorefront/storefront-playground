@@ -26,7 +26,9 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@rollup/plugin-json": "^6.1.0"
+    "@repo/eslint-config": "*",
+    "@rollup/plugin-json": "^6.1.0",
+    "@vue-storefront/jest-config": "0.0.4"
   },
   "files": [
     "lib/**/*",
