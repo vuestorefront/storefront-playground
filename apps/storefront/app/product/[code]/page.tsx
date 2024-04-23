@@ -6,10 +6,11 @@ import ProductCardVertical from "../../../components/ui/ProductCard";
 
 export default async function Page({ params }: { params: { code: string } }) {
   const { code } = params;
+  const sdk = getSdk();
 
-  const { data: product } = await getSdk().fakestore.getProduct({ code });
+  const { data: product } = await sdk.fakestore.getProduct({ code });
 
-  const relatedProducts = await getSdk().fakestore.getRelatedProducts({ productId: code });
+  const relatedProducts = await sdk.fakestore.getRelatedProducts({ productId: code });
 
   if (product === null) {
     redirect('/not-found');
