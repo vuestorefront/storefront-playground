@@ -1,5 +1,5 @@
 import consola from "consola";
-import type { BoilerplateIntegrationContext, Product } from "../../types";
+import type { FakeStoreIntegrationContext, Product } from "../../types";
 
 interface GetProductsParams {
   code: string;
@@ -23,13 +23,14 @@ interface GetProductsParams {
  * Fetching a product by its code
  *
  * ```ts
- * import { sdk } from '~/sdk';
+ * import { getSdk } from "@/sdk/sdk.config"
+ * const sdk = getSdk();
  *
  * const product = await sdk.fakestore.getProduct({ code: '1' });
  * ```
  */
 export const getProduct = async (
-  context: BoilerplateIntegrationContext,
+  context: FakeStoreIntegrationContext,
   params: GetProductsParams
 ): Promise<{ data: Product }> => {
   try {
