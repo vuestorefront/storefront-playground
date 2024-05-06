@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@vue-storefront/middleware": "^3.9.0",
-    "axios": "^0.21.1",
     "consola": "^3.0.0",
     "nanoid": "^5.0.7",
     "storyblok-js-client": "^6.7.2",
@@ -27,8 +26,7 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
-    "@rollup/plugin-json": "^6.1.0",
-    "@vue-storefront/jest-config": "0.0.4"
+    "@vue-storefront/jest-config": "^0.0.5"
   },
   "files": [
     "lib/**/*",
