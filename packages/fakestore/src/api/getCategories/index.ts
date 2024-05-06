@@ -1,8 +1,29 @@
 import consola from "consola";
-import type { BoilerplateIntegrationContext } from "../../types";
+import type { FakeStoreIntegrationContext } from "../../types";
 
+/**
+ * Get all categories
+ * 
+ * @remarks
+ * Check out the Fakestore API documentation for more information.
+ * {@link https://fakestoreapi.com/docs}
+ *
+ * @returns
+ * Returns list of categories.
+ *
+ * @example
+ * Fetching all categories
+ *
+ * ```ts
+ * import { getSdk } from "@/sdk/sdk.config"
+ * const sdk = getSdk();
+ *
+ * const product = await sdk.fakestore.getCategories();
+ * ```
+ * @returns 
+ */
 export const getCategories = async (
-  _context: BoilerplateIntegrationContext
+  context: FakeStoreIntegrationContext
 ): Promise<{ data: string[] }> => {
   try {
     const categories = await fetch(

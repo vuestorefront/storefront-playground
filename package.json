@@ -26,6 +26,6 @@
   ],
   "dependencies": {
     "@vue-storefront/integrations-tsconfig": "^0.0.4",
-    "@vue-storefront/rollup-config": "^0.0.7"
+    "@vue-storefront/rollup-config": "^0.0.8"
   }
 }

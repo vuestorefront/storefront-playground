@@ -1,5 +1,13 @@
 import consola from "consola";
-import type { BoilerplateIntegrationContext, Product } from "../../types";
+import type { FakeStoreIntegrationContext, Product } from "../../types";
+
+interface GetProductsParams {
+  category?: string;
+  options?: {
+    limit?: number;
+    sort?: string;
+  };
+}
 
 /**
  * Get details of multiple products from Fakestore API.
@@ -19,7 +27,8 @@ import type { BoilerplateIntegrationContext, Product } from "../../types";
  * Fetching a list of products.
  *
  * ```ts
- * import { sdk } from '~/sdk';
+ * import { getSdk } from "@/sdk/sdk.config"
+ * const sdk = getSdk();
  *
  * const product = await sdk.fakestore.getProducts();
  * ``` *
@@ -27,7 +36,8 @@ import type { BoilerplateIntegrationContext, Product } from "../../types";
  * Fetching a list of products with options.
  *
  * ```ts
- * import { sdk } from '~/sdk';
+ * import { getSdk } from "@/sdk/sdk.config"
+ * const sdk = getSdk();
  *
  * const product = await sdk.fakestore.getProducts({
  *  options: {
@@ -37,17 +47,8 @@ import type { BoilerplateIntegrationContext, Product } from "../../types";
  * });
  * ```
  */
-
-interface GetProductsParams {
-  category?: string;
-  options?: {
-    limit?: number;
-    sort?: string;
-  };
-}
-
 export const getProducts = async (
-  context: BoilerplateIntegrationContext,
+  context: FakeStoreIntegrationContext,
   params?: GetProductsParams
 ): Promise<{ data: Product[] }> => {
   const { limit = 10, sort = "asc" } = params.options || {};

@@ -19,7 +19,7 @@ import { useCounter } from 'react-use';
 import type { ChangeEvent } from 'react';
 import { useId } from 'react';
 import { clamp } from '@storefront-ui/shared';
-import type { Product } from '@fakestore/api-client';
+import type { Product } from '@vue-storefront/fakestore-api';
 
 interface ProductDetailsProps {
   product: Product;

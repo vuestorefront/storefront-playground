@@ -10,9 +10,9 @@
     "lint": "echo 'Add lint script here'"
   },
   "dependencies": {
-    "@fakestore/api-client": "*",
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@vue-storefront/fakestore-api": "*",
     "@vue-storefront/middleware": "^3.8.1",
     "@vue-storefront/storyblok-api": "*",
     "consola": "^3.2.3",

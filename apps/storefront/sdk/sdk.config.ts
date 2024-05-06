@@ -1,8 +1,7 @@
 import type { CreateSdkOptions} from "@vue-storefront/next";
 import { createSdk } from "@vue-storefront/next";
 import type {
-  FakeStoreEndpoints,
-  RelatedProductsEndpoints,
+  ExtendedFakeStoreEndpoints,
   StoryblokEndpoints,
 } from "../../middleware/types";
 
@@ -16,7 +15,7 @@ export const { getSdk } = createSdk(
   options,
   ({ buildModule, middlewareUrl, middlewareModule, getRequestHeaders }) => ({
     fakestore: buildModule(
-      middlewareModule<FakeStoreEndpoints & RelatedProductsEndpoints>,
+      middlewareModule<ExtendedFakeStoreEndpoints>,
       {
         apiUrl: middlewareUrl + "/fakestore",
         defaultRequestConfig: {
