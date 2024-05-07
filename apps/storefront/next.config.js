@@ -8,7 +8,12 @@ module.exports = {
       },
       {
         protocol: 'https',
-        hostname: 'preview.redd.it',
+        hostname: 'burst.shopifycdn.com',
+        port: '',
+      },
+      {
+        protocol: 'https',
+        hostname: 'github.com',
         port: '',
       }
     ],
