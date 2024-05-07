@@ -1,8 +1,8 @@
-import { BoilerplateIntegrationContext } from "@vue-storefront/fakestore-api";
+import { FakeStoreIntegrationContext } from "@vue-storefront/fakestore-api";
 import { Endpoints as StoryblokEndpoints } from "@vue-storefront/storyblok-api";
 
 export async function getRelatedProducts(
-  context: BoilerplateIntegrationContext,
+  context: FakeStoreIntegrationContext,
   params: { productId: string }
 ) {
   const storyblokClient = context.getApiClient<StoryblokEndpoints>("storyblok");
