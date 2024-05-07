@@ -10,6 +10,8 @@
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "eslint": "^8.56.0",
     "prettier": "^3.1.1",
     "rollup": "^4.14.3",
     "turbo": "latest"
@@ -24,6 +26,6 @@
   ],
   "dependencies": {
     "@vue-storefront/integrations-tsconfig": "^0.0.4",
-    "@vue-storefront/rollup-config": "^0.0.7"
+    "@vue-storefront/rollup-config": "^0.0.8"
   }
 }

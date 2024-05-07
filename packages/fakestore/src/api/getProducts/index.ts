@@ -1,5 +1,13 @@
 import consola from "consola";
-import { BoilerplateIntegrationContext, Product, TODO } from "../../types";
+import type { FakeStoreIntegrationContext, Product } from "../../types";
+
+interface GetProductsParams {
+  category?: string;
+  options?: {
+    limit?: number;
+    sort?: string;
+  };
+}
 
 /**
  * Get details of multiple products from Fakestore API.
@@ -7,7 +15,7 @@ import { BoilerplateIntegrationContext, Product, TODO } from "../../types";
  * @remarks
  * Check out the Fakestore API documentation for more information.
  * {@link https://fakestoreapi.com/docs}
- * 
+ *
  * @param params
  * Parameter object which can be used with this method.
  * Refer to its type definition to learn about possible properties.
@@ -19,7 +27,8 @@ import { BoilerplateIntegrationContext, Product, TODO } from "../../types";
  * Fetching a list of products.
  *
  * ```ts
- * import { sdk } from '~/sdk';
+ * import { getSdk } from "@/sdk/sdk.config"
+ * const sdk = getSdk();
  *
  * const product = await sdk.fakestore.getProducts();
  * ``` *
@@ -27,7 +36,8 @@ import { BoilerplateIntegrationContext, Product, TODO } from "../../types";
  * Fetching a list of products with options.
  *
  * ```ts
- * import { sdk } from '~/sdk';
+ * import { getSdk } from "@/sdk/sdk.config"
+ * const sdk = getSdk();
  *
  * const product = await sdk.fakestore.getProducts({
  *  options: {
@@ -37,22 +47,15 @@ import { BoilerplateIntegrationContext, Product, TODO } from "../../types";
  * });
  * ```
  */
-
-interface GetProductsParams {
-  category?: string;
-  options?: {
-    limit?: number;
-    sort?: string;
-  }
-}
-
 export const getProducts = async (
-  context: BoilerplateIntegrationContext,
-  params?: GetProductsParams,
+  context: FakeStoreIntegrationContext,
+  params?: GetProductsParams
 ): Promise<{ data: Product[] }> => {
   const { limit = 10, sort = "asc" } = params.options || {};
 
-  const url = params.category ? `https://fakestoreapi.com/products/category/${params.category}?limit=${limit}&sort=${sort}` : `https://fakestoreapi.com/products?limit=${limit}&sort=${sort}`;
+  const url = params.category
+    ? `https://fakestoreapi.com/products/category/${params.category}?limit=${limit}&sort=${sort}`
+    : `https://fakestoreapi.com/products?limit=${limit}&sort=${sort}`;
 
   try {
     const products = await fetch(url);

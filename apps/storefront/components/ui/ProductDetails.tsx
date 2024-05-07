@@ -16,9 +16,10 @@ import {
   SfIconShoppingCartCheckout,
 } from '@storefront-ui/react';
 import { useCounter } from 'react-use';
-import { useId, ChangeEvent } from 'react';
+import type { ChangeEvent } from 'react';
+import { useId } from 'react';
 import { clamp } from '@storefront-ui/shared';
-import { Product } from '@fakestore/api-client';
+import type { Product } from '@vue-storefront/fakestore-api';
 
 interface ProductDetailsProps {
   product: Product;

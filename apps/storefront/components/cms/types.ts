@@ -1,10 +1,8 @@
-
 export interface AgnosticCmsComponent {
   _uid: string;
   component: string;
   styles: string;
   uniqueClass: string;
-  [key: string]: any;
 }
 
 export interface AgnosticCmsImage {

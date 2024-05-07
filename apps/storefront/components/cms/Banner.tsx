@@ -1,7 +1,7 @@
 import { SfButton } from '@storefront-ui/react';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { AgnosticCmsButton, AgnosticCmsImage } from './types';
+import type { AgnosticCmsButton, AgnosticCmsImage } from './types';
 import Image from 'next/image';
 
 type BannerProps = {

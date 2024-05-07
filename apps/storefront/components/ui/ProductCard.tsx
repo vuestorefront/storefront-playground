@@ -1,4 +1,4 @@
-import { Product } from '@fakestore/api-client';
+import type { Product } from '@vue-storefront/fakestore-api';
 import { SfButton, SfRating, SfCounter, SfLink, SfIconShoppingCart, SfIconFavorite } from '@storefront-ui/react';
 import Image from 'next/image';
 

@@ -1,6 +1,6 @@
-import RenderComponent from "../components/cms/RenderComponent";
-import { AgnosticCmsComponent } from "../components/cms/types";
-import { getSdk } from "../sdk/sdk.config";
+import RenderComponent from "@/components/cms/RenderComponent";
+import type { AgnosticCmsComponent } from "@/components/cms/types";
+import { getSdk } from "@/sdk/sdk.config";
 
 export default async function Page() {
   const content = await getSdk().storyblok.getContent({

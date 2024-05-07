@@ -1,6 +1,6 @@
 import axios from "axios";
 import { apiClientFactory } from "@vue-storefront/middleware";
-import { MiddlewareConfig } from "./index";
+import type { MiddlewareConfig } from "./index";
 import * as apiEndpoints from "./api";
 
 /**
@@ -21,6 +21,7 @@ const onCreate = (settings: MiddlewareConfig) => {
   };
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const { createApiClient } = apiClientFactory<any, any>({
   onCreate,
   api: apiEndpoints,

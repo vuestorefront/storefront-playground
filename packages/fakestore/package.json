@@ -1,5 +1,5 @@
 {
-  "name": "@fakestore/api-client",
+  "name": "@vue-storefront/fakestore-api",
   "version": "0.0.4",
   "sideEffects": false,
   "server": "server/index.js",
@@ -8,7 +8,7 @@
   "types": "lib/index.d.ts",
   "license": "VSFEL",
   "engines": {
-    "node": ">=16.x"
+    "node": ">=18.x"
   },
   "scripts": {
     "prepublishOnly": "yarn build",
@@ -23,7 +23,8 @@
     "axios": "^0.21.1"
   },
   "devDependencies": {
-    "@rollup/plugin-json": "^6.1.0"
+    "@repo/eslint-config": "*",
+    "@vue-storefront/jest-config": "^0.0.5"
   },
   "files": [
     "lib/**/*",
